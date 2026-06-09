@@ -1,0 +1,107 @@
+<!-- Page Header -->
+<section class="page-header" aria-label="About page header">
+  <div class="container mx-auto px-6 py-20 md:py-28">
+    <span class="section-label">Get to know me</span>
+    <h1 class="section-title">About Me</h1>
+    <p class="section-subtitle">
+      10+ years building products that people love — accessible, performant, and built to last.
+    </p>
+  </div>
+</section>
+
+<!-- Summary -->
+<section class="py-16 border-t border-gray-800" aria-label="Professional summary">
+  <div class="container mx-auto px-6">
+    <div class="max-w-4xl">
+      <span class="section-label">Professional Summary</span>
+      <h2 class="text-2xl font-bold text-white mb-6">Who I Am</h2>
+      <p class="text-gray-300 leading-relaxed text-lg">
+        {{ resume.summary }}
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Skill Meters -->
+<section class="py-16 border-t border-gray-800" aria-label="Core technical skills">
+  <div class="container mx-auto px-6">
+    <span class="section-label">Core Skills</span>
+    <h2 class="text-2xl font-bold text-white mb-2">Proficiency Levels</h2>
+    <p class="text-gray-400 text-sm mb-10">Assessed from years of hands-on production usage across real-world projects.</p>
+
+    <div class="skill-meters-grid" role="list" aria-label="Skill proficiency meters">
+      @for (skill of resume.skillMeters; track skill.name; let i = $index) {
+        <div role="listitem">
+          <app-skill-meter
+            [skill]="skill.name"
+            [percentage]="skill.level"
+            [animationDelay]="i * 120"
+          />
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Technical Expertise Groups -->
+<section class="py-16 border-t border-gray-800" aria-label="Technical expertise by category">
+  <div class="container mx-auto px-6">
+    <span class="section-label">Technical Expertise</span>
+    <h2 class="text-2xl font-bold text-white mb-10">Full Stack & Beyond</h2>
+
+    <div class="expertise-grid">
+      @for (group of resume.skillGroups; track group.category) {
+        <div class="card expertise-card">
+          <h3 class="expertise-title">{{ group.category }}</h3>
+          <div class="flex flex-wrap gap-2 mt-3">
+            @for (item of group.items; track item) {
+              <span class="tech-badge">{{ item }}</span>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Education & Languages -->
+<section class="py-16 border-t border-gray-800" aria-label="Education and languages">
+  <div class="container mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-12">
+
+      <!-- Education -->
+      <div>
+        <span class="section-label">Education</span>
+        <h2 class="text-2xl font-bold text-white mb-6">Academic Background</h2>
+        @for (edu of resume.education; track edu.institution) {
+          <div class="card">
+            <h3 class="text-white font-semibold text-lg">{{ edu.degree }}</h3>
+            <p class="text-blue-400 font-medium mt-1">{{ edu.institution }}</p>
+            <p class="text-gray-400 text-sm mt-1">{{ edu.location }}</p>
+            <div class="flex items-center gap-4 mt-4">
+              <span class="edu-badge">Class of {{ edu.year }}</span>
+              <span class="edu-badge">GPA {{ edu.gpa }}</span>
+            </div>
+          </div>
+        }
+      </div>
+
+      <!-- Languages -->
+      <div>
+        <span class="section-label">Languages</span>
+        <h2 class="text-2xl font-bold text-white mb-6">Communication</h2>
+        <div class="flex flex-col gap-4">
+          @for (lang of resume.languages; track lang.name) {
+            <div class="card lang-card">
+              <span class="text-white font-semibold">{{ lang.name }}</span>
+              <span class="lang-badge" [class]="'lang-badge ' + lang.proficiency.toLowerCase()">
+                {{ lang.proficiency }}
+              </span>
+            </div>
+          }
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

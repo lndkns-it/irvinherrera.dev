@@ -1,0 +1,66 @@
+.skill-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 1.5rem 1rem;
+  background: #1f2937;
+  border: 1px solid #374151;
+  border-radius: 12px;
+  width: 160px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.15);
+    border-color: #3b82f6;
+  }
+}
+
+.gauge-wrap {
+  position: relative;
+  width: 120px;
+  height: 70px;
+}
+
+.track-bg {
+  stroke: #374151;
+}
+
+.track-fill {
+  &.advanced    { stroke: #10b981; }
+  &.intermediate { stroke: #3b82f6; }
+  &.beginner    { stroke: #f59e0b; }
+}
+
+.pct-value {
+  font-size: 20px;
+  font-weight: 700;
+  fill: #f9fafb;
+  font-family: inherit;
+}
+
+.pct-symbol {
+  font-size: 11px;
+  fill: #9ca3af;
+  font-family: inherit;
+}
+
+.skill-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #f9fafb;
+  text-align: center;
+}
+
+.skill-level {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 2px 10px;
+  border-radius: 999px;
+  text-align: center;
+
+  &.advanced    { background: #064e3b; color: #6ee7b7; }
+  &.intermediate { background: #1e3a5f; color: #93c5fd; }
+  &.beginner    { background: #451a03; color: #fcd34d; }
+}

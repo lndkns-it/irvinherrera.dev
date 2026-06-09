@@ -1,0 +1,60 @@
+.logo {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #f9fafb;
+  letter-spacing: -0.025em;
+  transition: color 0.15s;
+  text-decoration: none;
+
+  &:hover { color: #60a5fa; }
+
+  .accent { color: #3b82f6; }
+}
+
+.nav-link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #9ca3af;
+  transition: color 0.15s;
+  text-decoration: none;
+  padding: 0.25rem 0;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #3b82f6;
+    transition: width 0.2s ease;
+    border-radius: 1px;
+  }
+
+  &:hover {
+    color: #f9fafb;
+    &::after { width: 100%; }
+  }
+
+  &.active {
+    color: #60a5fa;
+    font-weight: 600;
+    &::after { width: 100%; }
+  }
+}
+
+.nav-link-mobile {
+  display: block;
+  padding: 0.75rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #9ca3af;
+  transition: color 0.15s, background-color 0.15s;
+  border-radius: 0.5rem;
+  text-decoration: none;
+
+  &:hover { color: #f9fafb; background: #374151; }
+
+  &.active { color: #60a5fa; font-weight: 600; }
+}

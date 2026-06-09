@@ -1,0 +1,65 @@
+<header class="fixed top-0 w-full bg-gray-900/95 backdrop-blur-sm border-b border-gray-700/50 shadow-xl z-50">
+  <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+
+    <a routerLink="/home" (click)="closeMenu()" class="logo" aria-label="Irvin Herrera – Home">
+      IH<span class="accent">.</span>dev
+    </a>
+
+    <!-- Desktop navigation -->
+    <nav aria-label="Main navigation" class="hidden md:block">
+      <ul class="flex gap-8" role="list">
+        <li>
+          <a routerLink="/home" routerLinkActive="active" class="nav-link">Home</a>
+        </li>
+        <li>
+          <a routerLink="/about" routerLinkActive="active" class="nav-link">About</a>
+        </li>
+        <li>
+          <a routerLink="/projects" routerLinkActive="active" class="nav-link">Experience</a>
+        </li>
+        <li>
+          <a routerLink="/contact" routerLinkActive="active" class="nav-link">Contact</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Mobile hamburger -->
+    <button
+      class="md:hidden p-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-700 transition-colors"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="isMenuOpen()"
+      aria-controls="mobile-menu"
+      aria-label="Toggle navigation menu"
+    >
+      @if (isMenuOpen()) {
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+          <path d="M18 6L6 18M6 6l12 12"/>
+        </svg>
+      } @else {
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+          <path d="M3 12h18M3 6h18M3 18h18"/>
+        </svg>
+      }
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  @if (isMenuOpen()) {
+    <nav id="mobile-menu" class="md:hidden border-t border-gray-700/50 bg-gray-900/98" aria-label="Mobile navigation">
+      <ul class="container mx-auto px-6 py-5 flex flex-col gap-1" role="list">
+        <li>
+          <a routerLink="/home" routerLinkActive="active" class="nav-link-mobile" (click)="closeMenu()">Home</a>
+        </li>
+        <li>
+          <a routerLink="/about" routerLinkActive="active" class="nav-link-mobile" (click)="closeMenu()">About</a>
+        </li>
+        <li>
+          <a routerLink="/projects" routerLinkActive="active" class="nav-link-mobile" (click)="closeMenu()">Experience</a>
+        </li>
+        <li>
+          <a routerLink="/contact" routerLinkActive="active" class="nav-link-mobile" (click)="closeMenu()">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  }
+</header>

@@ -1,0 +1,97 @@
+<!-- Hero -->
+<section class="hero" aria-label="Introduction">
+  <div class="container mx-auto px-6 py-20 md:py-28 lg:py-32">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+      <!-- Left: Identity & CTA -->
+      <div>
+        <span class="section-label">Hello, I'm</span>
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight tracking-tight mb-4">
+          Irvin<br>
+          <span class="text-blue-400">Herrera</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-300 font-light mb-2">
+          Senior / Lead Front-End Engineer
+        </p>
+        <p class="text-sm text-gray-500 flex items-center gap-1.5 mb-8">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Querétaro, Mexico &nbsp;·&nbsp; Open to Remote Roles
+        </p>
+
+        <p class="text-gray-300 leading-relaxed mb-10 max-w-xl text-base md:text-lg">
+          {{ heroSummary }}
+        </p>
+
+        <div class="flex flex-wrap gap-3 mb-10">
+          <a routerLink="/projects" class="btn-primary">View Experience</a>
+          <a routerLink="/contact" class="btn-secondary">Contact Me</a>
+          <a href="assets/Irvin_Herrera_CV_2026.pdf" target="_blank" rel="noopener noreferrer" class="btn-outline">
+            Download CV
+          </a>
+        </div>
+
+        <div class="flex gap-6 flex-wrap">
+          <a
+            href="mailto:ing.imherrera@gmail.com"
+            class="text-sm text-gray-400 hover:text-blue-400 transition-colors flex items-center gap-2"
+            aria-label="Send email to Irvin Herrera"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            ing.imherrera&#64;gmail.com
+          </a>
+          <a
+            href="https://linkedin.com/in/imherrera"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-sm text-gray-400 hover:text-blue-400 transition-colors flex items-center gap-2"
+            aria-label="Irvin Herrera on LinkedIn (opens in new tab)"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            linkedin.com/in/imherrera
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Stats -->
+      <div class="grid grid-cols-2 gap-4" role="list" aria-label="Key achievements">
+        @for (stat of stats; track stat.label) {
+          <div class="stat-card" role="listitem">
+            <span class="stat-value" aria-label="{{ stat.value }} {{ stat.label }}">{{ stat.value }}</span>
+            <span class="stat-label">{{ stat.label }}</span>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tech Strip -->
+<section class="border-t border-gray-800/80 py-12 bg-gray-900/30" aria-label="Technology expertise">
+  <div class="container mx-auto px-6">
+    <p class="text-gray-600 text-xs font-mono uppercase tracking-widest text-center mb-6">
+      Technologies &amp; Expertise
+    </p>
+    <div class="flex flex-wrap justify-center gap-3">
+      @for (tech of techStack; track tech) {
+        <span class="tech-badge">{{ tech }}</span>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- About teaser -->
+<section class="py-20 md:py-28" aria-label="About Irvin Herrera">
+  <div class="container mx-auto px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <span class="section-label text-center block">About Me</span>
+      <h2 class="section-title text-center">
+        Building the future of the web,<br>
+        <span class="text-blue-400">one component at a time.</span>
+      </h2>
+      <p class="text-gray-400 leading-relaxed text-lg mt-6 mb-10">
+        {{ resume.summary }}
+      </p>
+      <a routerLink="/about" class="btn-outline">Learn More About Me</a>
+    </div>
+  </div>
+</section>

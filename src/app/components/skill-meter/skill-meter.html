@@ -1,0 +1,36 @@
+<div class="skill-card">
+  <div class="gauge-wrap">
+    <svg
+      width="120"
+      height="70"
+      viewBox="0 0 120 70"
+      overflow="visible"
+      role="img"
+      [attr.aria-label]="skill() + ' proficiency: ' + displayPercentage() + '%'"
+    >
+      <path
+        d="M8,60 A52,52 0 0,1 112,60"
+        class="track-bg"
+        fill="none"
+        stroke-linecap="round"
+        stroke-width="10"
+      />
+      <path
+        d="M8,60 A52,52 0 0,1 112,60"
+        [class]="'track-fill ' + levelClass"
+        fill="none"
+        stroke-linecap="round"
+        stroke-width="10"
+        [style.stroke-dasharray]="circumference"
+        [style.stroke-dashoffset]="strokeDashoffset()"
+        [style.transition]="'stroke-dashoffset ' + animationDuration() + 'ms cubic-bezier(0.4,0,0.2,1)'"
+      />
+      <text x="60" y="58" text-anchor="middle" class="pct-value" aria-hidden="true">
+        {{ displayPercentage() }}
+      </text>
+      <text x="60" y="70" text-anchor="middle" class="pct-symbol" aria-hidden="true">%</text>
+    </svg>
+  </div>
+  <span class="skill-name">{{ skill() }}</span>
+  <span [class]="'skill-level ' + levelClass">{{ level }}</span>
+</div>
