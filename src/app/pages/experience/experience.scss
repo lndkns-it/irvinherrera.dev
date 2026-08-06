@@ -1,0 +1,118 @@
+.page-header {
+  background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(59, 130, 246, 0.06) 0%, transparent 60%);
+}
+
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding-top: 1.5rem;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.timeline-aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  padding-top: 0.35rem;
+}
+
+.timeline-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #374151;
+  border: 2px solid #4b5563;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  transition: background 0.2s, border-color 0.2s;
+
+  &.current {
+    background: #3b82f6;
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+  }
+}
+
+.timeline-line {
+  width: 2px;
+  flex: 1;
+  background: #1f2937;
+  min-height: 1.5rem;
+  margin-top: 4px;
+}
+
+.timeline-item:last-child .timeline-line {
+  display: none;
+}
+
+.timeline-content {
+  flex: 1;
+  padding-bottom: 2rem;
+}
+
+.timeline-card {
+  transition: border-color 0.2s, transform 0.2s;
+
+  &:hover {
+    border-color: rgba(59, 130, 246, 0.35);
+    transform: translateX(3px);
+  }
+}
+
+.timeline-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.current-badge {
+  display: inline-block;
+  padding: 0.2rem 0.7rem;
+  background: rgba(59, 130, 246, 0.15);
+  color: #60a5fa;
+  font-size: 0.7rem;
+  font-weight: 700;
+  border-radius: 999px;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.highlights-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.highlight-item {
+  font-size: 0.875rem;
+  color: #d1d5db;
+  line-height: 1.6;
+  padding-left: 1.25rem;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55rem;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #3b82f6;
+  }
+}

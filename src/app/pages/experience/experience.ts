@@ -2,12 +2,12 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { ResumeService } from '../../services/resume.service';
 
 @Component({
-  selector: 'app-projects',
+  selector: 'app-experience',
   imports: [],
-  templateUrl: './projects.html',
-  styleUrl: './projects.scss',
+  templateUrl: './experience.html',
+  styleUrl: './experience.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Projects {
-  readonly personalProjects = inject(ResumeService).data.personalProjects;
+export class Experience {
+  readonly experiences = inject(ResumeService).data.experiences;
 }

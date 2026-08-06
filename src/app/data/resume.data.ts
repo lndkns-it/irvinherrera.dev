@@ -39,6 +39,22 @@ export const RESUME_DATA: ResumeData = {
       year: 2025,
       status: 'live',
     },
+    {
+      id: 'irv-b-studio',
+      name: 'irv-b-studio',
+      tagline: 'Music studio management platform',
+      description:
+        'Fullstack monorepo for a music studio booking and management system. Features a Next.js web frontend with a Tailwind-based component library and a Node.js background worker, all sharing a Prisma + PostgreSQL database package via npm workspaces.',
+      technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Node.js', 'Prisma', 'PostgreSQL', 'npm Workspaces'],
+      highlights: [
+        'npm workspaces monorepo with a shared @irv-b/database package (Prisma ORM) consumed by both the web app and the worker.',
+        'Next.js 15 frontend bootstrapped with create-next-app, currently building a component design system with Tailwind CSS.',
+        'Background worker app handles async studio operations; concurrently script runs both apps in development with a single command.',
+      ],
+      github: 'https://github.com/lndkns-it/irv-b-studio',
+      year: 2026,
+      status: 'in-progress',
+    },
   ],
   experiences: [
     {
