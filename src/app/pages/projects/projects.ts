@@ -9,5 +9,7 @@ import { ResumeService } from '../../services/resume.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Projects {
-  readonly experiences = inject(ResumeService).data.experiences;
+  private readonly resume = inject(ResumeService).data;
+  readonly experiences = this.resume.experiences;
+  readonly personalProjects = this.resume.personalProjects;
 }

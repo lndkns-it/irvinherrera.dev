@@ -37,6 +37,19 @@ export interface Stat {
   label: string;
 }
 
+export interface PersonalProject {
+  id: string;
+  name: string;
+  tagline: string;
+  description: string;
+  technologies: string[];
+  highlights: string[];
+  url?: string;
+  github?: string;
+  year: number;
+  status: 'live' | 'in-progress' | 'archived';
+}
+
 export interface ResumeData {
   name: string;
   title: string;
@@ -46,6 +59,7 @@ export interface ResumeData {
   linkedin: string;
   summary: string;
   experiences: Experience[];
+  personalProjects: PersonalProject[];
   skillMeters: SkillMeterItem[];
   skillGroups: SkillGroup[];
   education: Education[];

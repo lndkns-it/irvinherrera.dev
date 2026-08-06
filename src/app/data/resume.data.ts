@@ -9,6 +9,37 @@ export const RESUME_DATA: ResumeData = {
   linkedin: 'linkedin.com/in/imherrera',
   summary:
     'Senior Front-End Engineer with 10+ years of experience delivering high-impact web and mobile applications across fintech, healthcare, energy, and enterprise sectors. Proven track record leading cross-functional teams, building accessible design systems (WCAG 2.2), and integrating AI/LLM tooling to accelerate delivery. Comfortable owning the full lifecycle — from architecture and development to CI/CD and production — and bridging the gap between design, engineering, and business goals in fully remote, Agile environments.',
+  personalProjects: [
+    {
+      id: 'lexia',
+      name: 'LexIA',
+      tagline: 'AI-powered legal document evaluator',
+      description:
+        'Full-stack system that evaluates PDF and DOCX legal documents against database-driven rubrics tailored to Mexican law using Claude AI. Documents receive a structured verdict with per-criterion scores, severity-flagged errors, and actionable improvement suggestions.',
+      technologies: [
+        'Flutter',
+        'Node.js',
+        'Express',
+        'PostgreSQL',
+        'Redis',
+        'BullMQ',
+        'Claude AI',
+        'Docker',
+        'Vercel',
+        'Railway',
+      ],
+      highlights: [
+        'Async evaluation pipeline: HTTP server enqueues BullMQ jobs; worker processes up to 3 documents concurrently with exponential-backoff retries.',
+        'AI rubric engine loads active scoring criteria from PostgreSQL at evaluation time and calls Claude with prompt caching — returning APROBADO / OBSERVACIONES / RECHAZADO verdicts with 0–10 scores.',
+        'JWT auth with plan-based monthly quotas (free / pro / despacho) that auto-reset each calendar month.',
+        'Cross-platform Flutter frontend deployed on Vercel (web) with Android support; polls evaluation status every 3 seconds.',
+      ],
+      url: 'https://lexia-ten-rho.vercel.app/',
+      github: 'https://github.com/lndkns-it/lexia',
+      year: 2025,
+      status: 'live',
+    },
+  ],
   experiences: [
     {
       id: 'globant',
