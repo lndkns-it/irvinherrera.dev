@@ -7,8 +7,8 @@
   align-items: center;
   gap: 1rem;
   padding: 1rem 1.25rem;
-  background: #1f2937;
-  border: 1px solid #374151;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border-2);
   border-radius: 0.75rem;
   text-decoration: none;
   transition: border-color 0.2s, transform 0.15s;
@@ -26,8 +26,8 @@
   width: 44px;
   height: 44px;
   border-radius: 0.625rem;
-  background: rgba(59, 130, 246, 0.1);
-  color: #60a5fa;
+  background-color: var(--color-accent-bg);
+  color: var(--color-accent-bright);
   flex-shrink: 0;
 }
 
@@ -35,13 +35,13 @@
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #6b7280;
+  color: var(--color-text-faint);
   font-weight: 600;
 }
 
 .contact-value {
   font-size: 0.9rem;
-  color: #e5e7eb;
+  color: var(--color-text-secondary);
   font-weight: 500;
   margin-top: 0.125rem;
 }
@@ -70,7 +70,7 @@
   display: block;
   font-size: 0.875rem;
   font-weight: 500;
-  color: #d1d5db;
+  color: var(--color-text-secondary);
   margin-bottom: 0.5rem;
 }
 
@@ -80,7 +80,7 @@
   align-items: center;
   text-align: center;
   padding: 3rem 2rem;
-  background: #1f2937;
+  background-color: var(--color-surface);
   border: 1px solid rgba(16, 185, 129, 0.3);
   border-radius: 1rem;
 }

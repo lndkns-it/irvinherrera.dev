@@ -28,8 +28,8 @@
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: #374151;
-  border: 2px solid #4b5563;
+  background-color: var(--color-surface-3);
+  border: 2px solid var(--color-border-2);
   flex-shrink: 0;
   position: relative;
   z-index: 1;
@@ -45,7 +45,7 @@
 .timeline-line {
   width: 2px;
   flex: 1;
-  background: #1f2937;
+  background-color: var(--color-surface);
   min-height: 1.5rem;
   margin-top: 4px;
 }
@@ -100,7 +100,7 @@
 
 .highlight-item {
   font-size: 0.875rem;
-  color: #d1d5db;
+  color: var(--color-text-secondary);
   line-height: 1.6;
   padding-left: 1.25rem;
   position: relative;
@@ -113,6 +113,6 @@
     width: 5px;
     height: 5px;
     border-radius: 50%;
-    background: #3b82f6;
+    background: var(--color-accent);
   }
 }

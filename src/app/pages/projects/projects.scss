@@ -13,7 +13,7 @@
 
 .highlight-item {
   font-size: 0.875rem;
-  color: #d1d5db;
+  color: var(--color-text-secondary);
   line-height: 1.6;
   padding-left: 1.25rem;
   position: relative;
@@ -26,7 +26,7 @@
     width: 5px;
     height: 5px;
     border-radius: 50%;
-    background: #3b82f6;
+    background: var(--color-accent);
   }
 }
 
@@ -49,7 +49,7 @@
 
 .project-card-header {
   padding-bottom: 1rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .status-badge {
@@ -112,27 +112,27 @@
   transition: all 0.2s;
 
   &:focus-visible {
-    outline: 2px solid #60a5fa;
+    outline: 2px solid var(--color-accent);
     outline-offset: 2px;
   }
 
   &--primary {
-    border: 1px solid #3b82f6;
-    color: #60a5fa;
+    border: 1px solid var(--color-accent);
+    color: var(--color-accent-bright);
 
     &:hover {
-      background: rgba(59, 130, 246, 0.1);
-      color: #93c5fd;
+      background-color: var(--color-accent-bg);
+      color: var(--color-accent);
     }
   }
 
   &--secondary {
-    background: #374151;
-    color: #d1d5db;
+    background-color: var(--color-surface-3);
+    color: var(--color-text-secondary);
 
     &:hover {
-      background: #4b5563;
-      color: #fff;
+      background-color: var(--color-border-2);
+      color: var(--color-text-primary);
     }
   }
 }
