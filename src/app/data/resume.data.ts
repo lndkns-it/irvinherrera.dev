@@ -2,13 +2,13 @@ import { ResumeData } from '../models/resume.models';
 
 export const RESUME_DATA: ResumeData = {
   name: 'Irvin Herrera',
-  title: 'Senior / Lead Front-End Engineer',
+  title: 'Senior / Lead Fullstack Engineer',
   location: 'Querétaro, Mexico',
   email: 'ing.imherrera@gmail.com',
   phone: '+52 442 360 5388',
   linkedin: 'linkedin.com/in/imherrera',
   summary:
-    'Senior Front-End Engineer with 10+ years of experience delivering high-impact web and mobile applications across fintech, healthcare, energy, and enterprise sectors. Proven track record leading cross-functional teams, building accessible design systems (WCAG 2.2), and integrating AI/LLM tooling to accelerate delivery. Comfortable owning the full lifecycle — from architecture and development to CI/CD and production — and bridging the gap between design, engineering, and business goals in fully remote, Agile environments.',
+    'Senior Fullstack Engineer with 10+ years of experience delivering high-impact web and mobile applications across fintech, healthcare, energy, and enterprise sectors. Proven track record leading cross-functional teams, building accessible design systems (WCAG 2.2), and integrating AI/LLM tooling to accelerate delivery. Comfortable owning the full lifecycle — from architecture and development to CI/CD and production — and bridging the gap between design, engineering, and business goals in fully remote, Agile environments.',
   personalProjects: [
     {
       id: 'lexia',
