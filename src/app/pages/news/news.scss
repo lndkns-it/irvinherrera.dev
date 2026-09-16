@@ -17,7 +17,7 @@
   min-height: 100vh;
   background: var(--bg);
   color: var(--ink);
-  padding-top: 65px; // below fixed portfolio header
+  padding-top: 0;
   padding-bottom: 70px;
   font-family: 'Spectral', Georgia, serif;
 }
@@ -25,7 +25,7 @@
 // ─── Topbar ───────────────────────────────────────────────────────────────────
 .news-topbar {
   position: sticky;
-  top: 65px; // stack below portfolio header (z-50)
+  top: 0;
   z-index: 39;
   background: var(--ink);
   color: var(--paper);

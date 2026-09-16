@@ -1,17 +1,13 @@
 import { Routes } from '@angular/router';
-import { Home } from './pages/home/home';
-import { About } from './pages/about/about';
-import { Projects } from './pages/projects/projects';
-import { Experience } from './pages/experience/experience';
-import { Contact } from './pages/contact/contact';
 import { News } from './pages/news/news';
 
 export const routes: Routes = [
-    { path: '', redirectTo: '/home', pathMatch: 'full' },
-    { path: 'home', component: Home },
-    { path: 'about', component: About },
-    { path: 'projects', component: Projects },
-    { path: 'experience', component: Experience },
-    { path: 'contact', component: Contact },
-    { path: 'news', component: News }
+    { path: '', component: News },
+    { path: 'home', redirectTo: '', pathMatch: 'full' },
+    { path: 'about', redirectTo: '', pathMatch: 'full' },
+    { path: 'projects', redirectTo: '', pathMatch: 'full' },
+    { path: 'experience', redirectTo: '', pathMatch: 'full' },
+    { path: 'contact', redirectTo: '', pathMatch: 'full' },
+    { path: 'news', redirectTo: '', pathMatch: 'full' },
+    { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
