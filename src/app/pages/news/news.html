@@ -17,22 +17,6 @@
       </nav>
     </div>
 
-    @if (section() === 'front') {
-      <div class="edition-bar" role="group" aria-label="Select front page edition">
-        <div class="edition-bar-inner">
-          <span class="edition-label">Front page edition</span>
-          @for (e of editionItems; track e.id) {
-            <button
-              type="button"
-              class="edition-btn"
-              [class.edition-btn--active]="edition() === e.id"
-              [attr.aria-pressed]="edition() === e.id"
-              (click)="setEdition(e.id)"
-            >{{ e.label }}</button>
-          }
-        </div>
-      </div>
-    }
   </div>
 
   <!-- ── Newspaper paper ─────────────────────────────────────────── -->
@@ -60,122 +44,38 @@
         <section aria-label="Front page">
 
           <!-- Edition A: Broadsheet lead -->
-          @if (edition() === 'A') {
-            <div class="ed-a-grid border-fold">
-              <div>
-                <div class="section-kicker">Engineering · Exclusive</div>
-                <h2 class="ed-a-headline">AI Pipeline Cuts Component Delivery Time By 40%</h2>
-                <div class="deck">Senior engineer architects Flutter design system for Employbridge two months ahead of schedule, then automates the audits.</div>
-                <div class="byline-row">
-                  <span class="byline-author">By Irvin Herrera</span>
-                  <span class="byline-desk">Globant Desk</span>
-                </div>
-                <div class="multicol multicol--2">
-                  <p><span class="drop-cap" aria-hidden="true">S</span>enior Fullstack Engineer with 10+ years of experience delivering high-impact web and mobile applications across fintech, healthcare, energy, and enterprise sectors.</p>
-                  <p>Proven track record leading cross-functional teams, building accessible design systems (WCAG 2.2), and integrating AI/LLM tooling to accelerate delivery.</p>
-                  <p>Comfortable owning the full lifecycle — from architecture and development to CI/CD and production — and bridging the gap between design, engineering, and business goals in fully remote, Agile environments.</p>
-                  <p>Directed AI-assisted development workflows — prompt engineering, context management, output validation — enabling a small team to sustain the velocity of a team twice its size.</p>
-                </div>
+          <div class="ed-a-grid border-fold">
+            <div>
+              <div class="section-kicker">Engineering · Exclusive</div>
+              <h2 class="ed-a-headline">AI Pipeline Cuts Component Delivery Time By 40%</h2>
+              <div class="deck">Senior engineer architects Flutter design system for Employbridge two months ahead of schedule, then automates the audits.</div>
+              <div class="byline-row">
+                <span class="byline-author">By Irvin Herrera</span>
+                <span class="byline-desk">Globant Desk</span>
               </div>
-              <div class="ed-a-sidebar">
-                <div class="photo-placeholder portrait-h" role="img" aria-label="Portrait photo placeholder">
-                  <span class="photo-label">portrait · b/w</span>
-                </div>
-                <div class="photo-caption">Herrera at the desk. Ten years, four sectors, one engineer who ships.</div>
-                <div class="stats-box">
-                  <div class="stats-box__title">By the numbers</div>
-                  @for (s of stats; track s.n) {
-                    <div class="stats-row">
-                      <span class="stat-num">{{ s.n }}</span>
-                      <span class="stat-lbl">{{ s.l }}</span>
-                    </div>
-                  }
-                </div>
-              </div>
-            </div>
-          }
-
-          <!-- Edition B: Black slab -->
-          @if (edition() === 'B') {
-            <div class="border-fold">
-              <div class="slab-hero">
-                <div class="slab-kicker">Late edition · Available for hire</div>
-                <h2 class="slab-headline">Ten Years. Four Sectors. Zero Missed Ships.</h2>
-                <div class="slab-stats">
-                  @for (s of stats; track s.n) {
-                    <div class="slab-stat">
-                      <span class="slab-stat-num">{{ s.n }}</span>
-                      <span class="slab-stat-lbl">{{ s.l }}</span>
-                    </div>
-                  }
-                </div>
-              </div>
-              <div class="multicol multicol--3">
-                <h3 class="col-hed">The Case For The Hire</h3>
-                <p>Senior Fullstack Engineer with 10+ years of experience delivering high-impact web and mobile applications across fintech, healthcare, energy, and enterprise sectors.</p>
+              <div class="multicol multicol--2">
+                <p><span class="drop-cap" aria-hidden="true">S</span>enior Fullstack Engineer with 10+ years of experience delivering high-impact web and mobile applications across fintech, healthcare, energy, and enterprise sectors.</p>
                 <p>Proven track record leading cross-functional teams, building accessible design systems (WCAG 2.2), and integrating AI/LLM tooling to accelerate delivery.</p>
                 <p>Comfortable owning the full lifecycle — from architecture and development to CI/CD and production — and bridging the gap between design, engineering, and business goals in fully remote, Agile environments.</p>
-                <p>Architected and led delivery of a production-ready Design System in Flutter, translating Figma designs into Atomic-architecture components complying with Material 3 and WCAG 2.2 — completing two months ahead of schedule.</p>
+                <p>Directed AI-assisted development workflows — prompt engineering, context management, output validation — enabling a small team to sustain the velocity of a team twice its size.</p>
               </div>
             </div>
-          }
-
-          <!-- Edition C: Photo splash -->
-          @if (edition() === 'C') {
-            <div class="border-fold">
-              <div class="splash-hero portrait-h--splash" role="img" aria-label="Workspace photo placeholder">
-                <div class="splash-photo-label">drop photo — wide, workspace</div>
-                <div class="splash-caption-box">
-                  <div class="slab-kicker">Picture story</div>
-                  <h2 class="splash-headline">The Engineer Who Automated His Own Code Reviews</h2>
-                </div>
+            <div class="ed-a-sidebar">
+              <div class="photo-placeholder portrait-h" role="img" aria-label="Portrait photo placeholder">
+                <span class="photo-label">portrait · b/w</span>
               </div>
-              <div class="ed-c-grid">
-                <div class="multicol-text">
-                  <p><span class="drop-cap" aria-hidden="true">A</span>n AI orchestration pipeline using Claude and Gemini automates component scaffolding, accessibility audits, and code reviews — reducing per-component delivery time by ~40%.</p>
-                  <p>Senior Fullstack Engineer with 10+ years of experience delivering high-impact web and mobile applications across fintech, healthcare, energy, and enterprise sectors.</p>
-                </div>
-                <div class="multicol-text multicol-text--ruled">
-                  <p>Proven track record leading cross-functional teams, building accessible design systems (WCAG 2.2), and integrating AI/LLM tooling to accelerate delivery.</p>
-                  <p>Comfortable owning the full lifecycle — from architecture and development to CI/CD and production.</p>
-                </div>
-                <div class="index-box">
-                  <div class="index-box__title">Index</div>
-                  @for (i of pageIndex; track i.l) {
-                    <div class="index-row">
-                      <span>{{ i.l }}</span>
-                      <span class="index-page">{{ i.p }}</span>
-                    </div>
-                  }
-                </div>
-              </div>
-            </div>
-          }
-
-          <!-- Edition D: All-type grid -->
-          @if (edition() === 'D') {
-            <div class="border-fold">
-              <div class="ed-d-grid">
-                <div class="ed-d-left">
-                  <div class="section-kicker">No pictures, no problem</div>
-                  <h2 class="ed-d-headline">Fintech. Health. Energy. Enterprise.</h2>
-                  <div class="ed-d-body">
-                    <p>Senior Fullstack Engineer with 10+ years of experience delivering high-impact web and mobile applications across fintech, healthcare, energy, and enterprise sectors.</p>
-                    <p>Proven track record leading cross-functional teams, building accessible design systems (WCAG 2.2), and integrating AI/LLM tooling to accelerate delivery.</p>
+              <div class="photo-caption">Herrera at the desk. Ten years, four sectors, one engineer who ships.</div>
+              <div class="stats-box">
+                <div class="stats-box__title">By the numbers</div>
+                @for (s of stats; track s.n) {
+                  <div class="stats-row">
+                    <span class="stat-num">{{ s.n }}</span>
+                    <span class="stat-lbl">{{ s.l }}</span>
                   </div>
-                </div>
-                <div class="ed-d-right">
-                  @for (s of stats; track s.n) {
-                    <div class="ed-d-stat" [style.background]="s.bg" [style.color]="s.fg">
-                      <span class="ed-d-stat-num">{{ s.n }}</span>
-                      <span class="ed-d-stat-lbl">{{ s.l }}</span>
-                    </div>
-                  }
-                  <div class="ed-d-quote">"Building the future of the web, one component at a time."</div>
-                </div>
+                }
               </div>
             </div>
-          }
+          </div>
 
           <!-- Below the fold (all editions) -->
           <div class="tech-strip">

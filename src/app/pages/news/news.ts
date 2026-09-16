@@ -2,10 +2,8 @@ import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { ReactiveFormsModule, FormControl, FormGroup } from '@angular/forms';
 
 export type Section = 'front' | 'about' | 'projects' | 'experience' | 'contact';
-export type Edition = 'A' | 'B' | 'C' | 'D';
 
 interface NavItem { id: Section; label: string; }
-interface EditionItem { id: Edition; label: string; }
 interface Stat { n: string; l: string; bg: string; fg: string; }
 interface Skill { n: string; lvl: string; }
 interface ExpertiseGroup { t: string; items: string; }
@@ -26,7 +24,6 @@ interface IndexItem { l: string; p: string; }
 })
 export class News {
   readonly section = signal<Section>('front');
-  readonly edition = signal<Edition>('A');
   readonly sent = signal(false);
 
   readonly contactForm = new FormGroup({
@@ -41,13 +38,6 @@ export class News {
     { id: 'projects', label: 'Projects Desk' },
     { id: 'experience', label: 'Career Ledger' },
     { id: 'contact', label: 'Classifieds' },
-  ];
-
-  readonly editionItems: EditionItem[] = [
-    { id: 'A', label: 'A · Broadsheet' },
-    { id: 'B', label: 'B · Black Slab' },
-    { id: 'C', label: 'C · Picture' },
-    { id: 'D', label: 'D · All Type' },
   ];
 
   readonly stats: Stat[] = [
@@ -224,7 +214,6 @@ export class News {
   ];
 
   setSection(s: Section): void { this.section.set(s); }
-  setEdition(e: Edition): void { this.edition.set(e); }
   goToProjects(): void { this.section.set('projects'); }
   goToExp(): void { this.section.set('experience'); }
   sendForm(): void { this.sent.set(true); }
