@@ -77,6 +77,18 @@ header {
   }
 }
 
+// Newspaper link — distinct accent color (warm red from the newspaper palette)
+.nav-link--news {
+  font-family: 'Archivo Narrow', Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: .04em;
+  color: #b32218 !important;
+
+  &::after { background: #b32218; }
+  &:hover { color: #9a1d14 !important; }
+  &.active { color: #b32218 !important; }
+}
+
 .theme-toggle {
   display: flex;
   align-items: center;
